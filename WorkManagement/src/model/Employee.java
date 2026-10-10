@@ -14,28 +14,20 @@ public class Employee {
     public Employee(long employeeId, String lastName, String firstName,
                     String patronymic, String phone, String email,
                     BigDecimal salary) {
-        validateEmployeeId(employeeId);
-        validateLastName(lastName);
-        validateFirstName(firstName);
-        validatePatronymic(patronymic);
-        validatePhone(phone);
-        validateEmail(email);
-        validateSalary(salary);
-
-        this.employeeId = employeeId;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.patronymic = patronymic;
-        this.phone = phone;
-        this.email = email;
-        this.salary = salary;
+        setEmployeeId(employeeId);
+        setLastName(lastName);
+        setFirstName(firstName);
+        setPatronymic(patronymic);
+        setPhone(phone);
+        setEmail(email);
+        setSalary(salary);
     }
 
     public long getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(long employeeId) {
+    public final void setEmployeeId(long employeeId) {
         validateEmployeeId(employeeId);
         this.employeeId = employeeId;
     }
@@ -44,7 +36,7 @@ public class Employee {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public final void setLastName(String lastName) {
         validateLastName(lastName);
         this.lastName = lastName;
     }
@@ -53,7 +45,7 @@ public class Employee {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public final void setFirstName(String firstName) {
         validateFirstName(firstName);
         this.firstName = firstName;
     }
@@ -62,7 +54,7 @@ public class Employee {
         return patronymic;
     }
 
-    public void setPatronymic(String patronymic) {
+    public final void setPatronymic(String patronymic) {
         validatePatronymic(patronymic);
         this.patronymic = patronymic;
     }
@@ -71,7 +63,7 @@ public class Employee {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public final void setPhone(String phone) {
         validatePhone(phone);
         this.phone = phone;
     }
@@ -80,7 +72,7 @@ public class Employee {
         return email;
     }
 
-    public void setEmail(String email) {
+    public final void setEmail(String email) {
         validateEmail(email);
         this.email = email;
     }
@@ -89,7 +81,7 @@ public class Employee {
         return salary;
     }
 
-    public void setSalary(BigDecimal salary) {
+    public final void setSalary(BigDecimal salary) {
         validateSalary(salary);
         this.salary = salary;
     }
@@ -101,15 +93,11 @@ public class Employee {
     }
 
     public static void validateLastName(String lastName) {
-        if (lastName == null || lastName.isBlank()) {
-            throw new IllegalArgumentException("Фамилия не должна быть пустой.");
-        }
+        validateRequiredText(lastName, "Фамилия не должна быть пустой.");
     }
 
     public static void validateFirstName(String firstName) {
-        if (firstName == null || firstName.isBlank()) {
-            throw new IllegalArgumentException("Имя не должно быть пустым.");
-        }
+        validateRequiredText(firstName, "Имя не должно быть пустым.");
     }
 
     public static void validatePatronymic(String patronymic) {
@@ -137,6 +125,12 @@ public class Employee {
         }
         if (salary.stripTrailingZeros().scale() > 2) {
             throw new IllegalArgumentException("Оклад должен задаваться с точностью до копеек.");
+        }
+    }
+
+    private static void validateRequiredText(String value, String errorMessage) {
+        if (value == null || value.isBlank()) {
+            throw new IllegalArgumentException(errorMessage);
         }
     }
 }
