@@ -1,5 +1,8 @@
 package model;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
 import java.math.BigDecimal;
 
 public class Employee {
@@ -21,6 +24,22 @@ public class Employee {
         setPhone(phone);
         setEmail(email);
         setSalary(salary);
+    }
+
+    public Employee(String data) {
+        this(splitData(data));
+    }
+
+    private Employee(String[] fields) {
+        this(parseEmployeeId(fields[0]), fields[1], fields[2], fields[3],
+                fields[4], fields[5], parseSalary(fields[6]));
+    }
+
+    public Employee(JsonObject json) {
+        this(readJsonEmployeeId(json), readJsonText(json, "lastName"),
+                readJsonText(json, "firstName"), readJsonText(json, "patronymic"),
+                readJsonText(json, "phone"), readJsonText(json, "email"),
+                readJsonNumber(json, "salary"));
     }
 
     public long getEmployeeId() {
@@ -131,6 +150,72 @@ public class Employee {
     private static void validateRequiredText(String value, String errorMessage) {
         if (value == null || value.isBlank()) {
             throw new IllegalArgumentException(errorMessage);
+        }
+    }
+
+    private static String[] splitData(String data) {
+        if (data == null) {
+            throw new IllegalArgumentException("Строка данных сотрудника не должна быть null.");
+        }
+        String[] fields = data.split(";", -1);
+        if (fields.length != 7) {
+            throw new IllegalArgumentException("Строка должна содержать ровно 7 полей через ;: "
+                    + "ID;фамилия;имя;отчество;телефон;email;оклад.");
+        }
+        return fields;
+    }
+
+    private static long parseEmployeeId(String value) {
+        try {
+            return Long.parseLong(value);
+        } catch (NumberFormatException exception) {
+            throw new IllegalArgumentException("ID должен быть целым числом в диапазоне long.", exception);
+        }
+    }
+
+    private static BigDecimal parseSalary(String value) {
+        try {
+            return new BigDecimal(value);
+        } catch (NumberFormatException exception) {
+            throw new IllegalArgumentException("Оклад должен быть числом с точкой в качестве разделителя.", exception);
+        }
+    }
+
+    private static JsonElement readJsonValue(JsonObject json, String field) {
+        if (json == null) {
+            throw new IllegalArgumentException("JSON-объект сотрудника не должен быть null.");
+        }
+        return json.get(field);
+    }
+
+    private static String readJsonText(JsonObject json, String field) {
+        JsonElement value = readJsonValue(json, field);
+        if (value == null || value.isJsonNull()) {
+            return null;
+        }
+        if (!value.isJsonPrimitive() || !value.getAsJsonPrimitive().isString()) {
+            throw new IllegalArgumentException("Поле JSON " + field + " должно быть строкой.");
+        }
+        return value.getAsString();
+    }
+
+    private static BigDecimal readJsonNumber(JsonObject json, String field) {
+        JsonElement value = readJsonValue(json, field);
+        if (value == null || !value.isJsonPrimitive() || !value.getAsJsonPrimitive().isNumber()) {
+            throw new IllegalArgumentException("Поле JSON " + field + " должно быть числом.");
+        }
+        try {
+            return value.getAsBigDecimal();
+        } catch (NumberFormatException exception) {
+            throw new IllegalArgumentException("Поле JSON " + field + " содержит некорректное число.", exception);
+        }
+    }
+
+    private static long readJsonEmployeeId(JsonObject json) {
+        try {
+            return readJsonNumber(json, "employeeId").longValueExact();
+        } catch (ArithmeticException exception) {
+            throw new IllegalArgumentException("ID в JSON должен быть целым числом в диапазоне long.", exception);
         }
     }
 }
