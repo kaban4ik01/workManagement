@@ -136,19 +136,12 @@ public class Employee {
             return false;
         }
         Employee other = (Employee) object;
-        return employeeId == other.employeeId
-                && Objects.equals(lastName, other.lastName)
-                && Objects.equals(firstName, other.firstName)
-                && Objects.equals(patronymic, other.patronymic)
-                && Objects.equals(phone, other.phone)
-                && Objects.equals(email, other.email)
-                && salary.compareTo(other.salary) == 0;
+        return Objects.equals(phone, other.phone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(employeeId, lastName, firstName, patronymic,
-                phone, email, salary.stripTrailingZeros());
+        return Objects.hash(phone);
     }
 
     private static String getInitial(String name) {
