@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="classes" name="Диаграмма классов">
+    <mxGraphModel dx="1900" dy="1165" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1900" pageHeight="1165" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Employee" value="Employee" style="swimlane;html=1;startSize=30;horizontal=1;container=1;collapsible=0;rounded=0;align=center;fontFamily=Helvetica;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="30" width="820" height="1105" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-field-0" value="− employeeId: long" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="35" width="800" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-field-1" value="− lastName: String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="57" width="800" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-field-2" value="− firstName: String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="79" width="800" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-field-3" value="− patronymic: String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="101" width="800" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-field-4" value="− phone: String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="123" width="800" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-field-5" value="− email: String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="145" width="800" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-field-6" value="− salary: BigDecimal" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="167" width="800" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-separator" value="" style="line;html=1;strokeWidth=1;" vertex="1" parent="Employee">
+          <mxGeometry x="0" y="196" width="820" height="0" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-0" value="+&amp;nbsp;Employee(employeeId:&amp;nbsp;long,&amp;nbsp;lastName:&amp;nbsp;String,&amp;nbsp;firstName:&amp;nbsp;String,&amp;nbsp;patronymic:&amp;nbsp;String,&amp;nbsp;phone:&amp;nbsp;String,&amp;nbsp;email:&amp;nbsp;String,&amp;nbsp;salary:&amp;nbsp;BigDecimal)" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="201" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-1" value="+&amp;nbsp;Employee(employeeId:&amp;nbsp;long,&amp;nbsp;lastName:&amp;nbsp;String,&amp;nbsp;firstName:&amp;nbsp;String,&amp;nbsp;patronymic:&amp;nbsp;String,&amp;nbsp;phone:&amp;nbsp;String,&amp;nbsp;email:&amp;nbsp;String)" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="224" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-2" value="+&amp;nbsp;Employee(employeeId:&amp;nbsp;long,&amp;nbsp;lastName:&amp;nbsp;String,&amp;nbsp;firstName:&amp;nbsp;String,&amp;nbsp;phone:&amp;nbsp;String,&amp;nbsp;email:&amp;nbsp;String)" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="247" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-3" value="+&amp;nbsp;Employee(data:&amp;nbsp;String)" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="270" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-4" value="−&amp;nbsp;Employee(fields:&amp;nbsp;String[])" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="293" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-5" value="+&amp;nbsp;Employee(json:&amp;nbsp;JsonObject)" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="316" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-6" value="+&amp;nbsp;getEmployeeId():&amp;nbsp;long" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="339" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-7" value="+&amp;nbsp;setEmployeeId(employeeId:&amp;nbsp;long):&amp;nbsp;void&amp;nbsp;{leaf}" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="362" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-8" value="+&amp;nbsp;getLastName():&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="385" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-9" value="+&amp;nbsp;setLastName(lastName:&amp;nbsp;String):&amp;nbsp;void&amp;nbsp;{leaf}" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="408" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-10" value="+&amp;nbsp;getFirstName():&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="431" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-11" value="+&amp;nbsp;setFirstName(firstName:&amp;nbsp;String):&amp;nbsp;void&amp;nbsp;{leaf}" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="454" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-12" value="+&amp;nbsp;getPatronymic():&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="477" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-13" value="+&amp;nbsp;setPatronymic(patronymic:&amp;nbsp;String):&amp;nbsp;void&amp;nbsp;{leaf}" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="500" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-14" value="+&amp;nbsp;getPhone():&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="523" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-15" value="+&amp;nbsp;setPhone(phone:&amp;nbsp;String):&amp;nbsp;void&amp;nbsp;{leaf}" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="546" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-16" value="+&amp;nbsp;getEmail():&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="569" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-17" value="+&amp;nbsp;setEmail(email:&amp;nbsp;String):&amp;nbsp;void&amp;nbsp;{leaf}" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="592" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-18" value="+&amp;nbsp;getSalary():&amp;nbsp;BigDecimal" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="615" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-19" value="+&amp;nbsp;setSalary(salary:&amp;nbsp;BigDecimal):&amp;nbsp;void&amp;nbsp;{leaf}" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="638" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-20" value="+&amp;nbsp;toString():&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="661" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-21" value="+&amp;nbsp;toShortString():&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="684" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-22" value="+&amp;nbsp;equals(object:&amp;nbsp;Object):&amp;nbsp;boolean" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="707" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-23" value="+&amp;nbsp;hashCode():&amp;nbsp;int" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="730" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-24" value="+&amp;nbsp;validateEmployeeId(employeeId:&amp;nbsp;long):&amp;nbsp;void" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="753" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-25" value="+&amp;nbsp;validateLastName(lastName:&amp;nbsp;String):&amp;nbsp;void" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="776" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-26" value="+&amp;nbsp;validateFirstName(firstName:&amp;nbsp;String):&amp;nbsp;void" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="799" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-27" value="+&amp;nbsp;validatePatronymic(patronymic:&amp;nbsp;String):&amp;nbsp;void" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="822" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-28" value="+&amp;nbsp;validatePhone(phone:&amp;nbsp;String):&amp;nbsp;void" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="845" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-29" value="+&amp;nbsp;validateEmail(email:&amp;nbsp;String):&amp;nbsp;void" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="868" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-30" value="+&amp;nbsp;validateSalary(salary:&amp;nbsp;BigDecimal):&amp;nbsp;void" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="891" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-31" value="−&amp;nbsp;splitData(data:&amp;nbsp;String):&amp;nbsp;String[]" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="914" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-32" value="−&amp;nbsp;parseEmployeeId(value:&amp;nbsp;String):&amp;nbsp;long" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="937" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-33" value="−&amp;nbsp;parseSalary(value:&amp;nbsp;String):&amp;nbsp;BigDecimal" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="960" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-34" value="−&amp;nbsp;readJsonValue(json:&amp;nbsp;JsonObject,&amp;nbsp;field:&amp;nbsp;String):&amp;nbsp;JsonElement" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="983" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-35" value="−&amp;nbsp;readJsonText(json:&amp;nbsp;JsonObject,&amp;nbsp;field:&amp;nbsp;String):&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="1006" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-36" value="−&amp;nbsp;readJsonNumber(json:&amp;nbsp;JsonObject,&amp;nbsp;field:&amp;nbsp;String):&amp;nbsp;BigDecimal" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="1029" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-37" value="−&amp;nbsp;readJsonSalary(json:&amp;nbsp;JsonObject):&amp;nbsp;BigDecimal" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="1052" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee-method-38" value="−&amp;nbsp;readJsonEmployeeId(json:&amp;nbsp;JsonObject):&amp;nbsp;long" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Employee">
+          <mxGeometry x="10" y="1075" width="800" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Main" value="Main" style="swimlane;html=1;startSize=30;horizontal=1;container=1;collapsible=0;rounded=0;align=center;fontFamily=Helvetica;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="30" width="700" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="Main-method-0" value="+&amp;nbsp;main(args:&amp;nbsp;String[]):&amp;nbsp;void" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="Main">
+          <mxGeometry x="10" y="35" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeMapper" value="EmployeeMapper {leaf}" style="swimlane;html=1;startSize=30;horizontal=1;container=1;collapsible=0;rounded=0;align=center;fontFamily=Helvetica;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="240" width="700" height="111" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeMapper-method-0" value="−&amp;nbsp;EmployeeMapper()" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeMapper">
+          <mxGeometry x="10" y="35" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeMapper-method-1" value="+&amp;nbsp;toShort(employee:&amp;nbsp;Employee):&amp;nbsp;EmployeeShort" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeMapper">
+          <mxGeometry x="10" y="58" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeMapper-method-2" value="−&amp;nbsp;getInitial(name:&amp;nbsp;String):&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeMapper">
+          <mxGeometry x="10" y="81" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort" value="EmployeeShort" style="swimlane;html=1;startSize=30;horizontal=1;container=1;collapsible=0;rounded=0;align=center;fontFamily=Helvetica;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="560" width="700" height="305" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-field-0" value="− shortName: String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="10" y="35" width="680" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-field-1" value="− phone: String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="10" y="57" width="680" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-separator" value="" style="line;html=1;strokeWidth=1;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="0" y="86" width="700" height="0" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-method-0" value="+&amp;nbsp;EmployeeShort(shortName:&amp;nbsp;String,&amp;nbsp;phone:&amp;nbsp;String)" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="10" y="91" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-method-1" value="+&amp;nbsp;getShortName():&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="10" y="114" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-method-2" value="+&amp;nbsp;setShortName(shortName:&amp;nbsp;String):&amp;nbsp;void&amp;nbsp;{leaf}" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="10" y="137" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-method-3" value="+&amp;nbsp;getPhone():&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="10" y="160" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-method-4" value="+&amp;nbsp;setPhone(phone:&amp;nbsp;String):&amp;nbsp;void&amp;nbsp;{leaf}" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="10" y="183" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-method-5" value="+&amp;nbsp;validateShortName(shortName:&amp;nbsp;String):&amp;nbsp;void" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="10" y="206" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-method-6" value="+&amp;nbsp;toString():&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="10" y="229" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-method-7" value="+&amp;nbsp;equals(object:&amp;nbsp;Object):&amp;nbsp;boolean" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="10" y="252" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeShort-method-8" value="+&amp;nbsp;hashCode():&amp;nbsp;int" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeShort">
+          <mxGeometry x="10" y="275" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeValidation" value="EmployeeValidation {leaf}" style="swimlane;html=1;startSize=30;horizontal=1;container=1;collapsible=0;rounded=0;align=center;fontFamily=Helvetica;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="1000" width="700" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeValidation-method-0" value="−&amp;nbsp;EmployeeValidation()" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeValidation">
+          <mxGeometry x="10" y="35" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeValidation-method-1" value="+&amp;nbsp;validateRequiredText(value:&amp;nbsp;String,&amp;nbsp;errorMessage:&amp;nbsp;String):&amp;nbsp;void" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeValidation">
+          <mxGeometry x="10" y="58" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeValidation-method-2" value="+&amp;nbsp;validatePhone(phone:&amp;nbsp;String):&amp;nbsp;void" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeValidation">
+          <mxGeometry x="10" y="81" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeValidation-method-3" value="+&amp;nbsp;normalizePhone(phone:&amp;nbsp;String):&amp;nbsp;String" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontStyle=4;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="EmployeeValidation">
+          <mxGeometry x="10" y="104" width="680" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="main-employee" value="" edge="1" parent="1" source="Main" target="Employee" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;fontFamily=Helvetica;fontSize=12;exitX=0.0;exitY=0.3076923076923077;exitPerimeter=0;entryX=1.0;entryY=0.01809954751131222;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-mapper" value="" edge="1" parent="1" source="Main" target="EmployeeMapper" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;fontFamily=Helvetica;fontSize=12;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-short" value="" edge="1" parent="1" source="Main" target="EmployeeShort" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;fontFamily=Helvetica;fontSize=12;exitX=1.0;exitY=0.46153846153846156;exitPerimeter=0;entryX=1.0;entryY=0.13114754098360656;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1840" y="60" />
+              <mxPoint x="1840" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="employee-mapper" value="" edge="1" parent="1" source="Employee" target="EmployeeMapper" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;fontFamily=Helvetica;fontSize=12;exitX=1.0;exitY=0.2081447963800905;exitPerimeter=0;entryX=0.0;entryY=0.2702702702702703;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="260" />
+              <mxPoint x="920" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mapper-employee" value="" edge="1" parent="1" source="EmployeeMapper" target="Employee" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;fontFamily=Helvetica;fontSize=12;exitX=0.0;exitY=0.8108108108108109;exitPerimeter=0;entryX=1.0;entryY=0.3257918552036199;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="330" />
+              <mxPoint x="980" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mapper-short" value="«create»" edge="1" parent="1" source="EmployeeMapper" target="EmployeeShort" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;fontFamily=Helvetica;fontSize=12;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="employee-short" value="" edge="1" parent="1" source="Employee" target="EmployeeShort" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;fontFamily=Helvetica;fontSize=12;exitX=1.0;exitY=0.4253393665158371;exitPerimeter=0;entryX=0.0;entryY=0.45901639344262296;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="500" />
+              <mxPoint x="1000" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="employee-validation" value="" edge="1" parent="1" source="Employee" target="EmployeeValidation" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;fontFamily=Helvetica;fontSize=12;exitX=1.0;exitY=0.7420814479638009;exitPerimeter=0;entryX=0.0;entryY=0.373134328358209;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="930" y="850" />
+              <mxPoint x="930" y="1050" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="short-validation" value="" edge="1" parent="1" source="EmployeeShort" target="EmployeeValidation" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;fontFamily=Helvetica;fontSize=12;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
