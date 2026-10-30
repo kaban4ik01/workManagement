@@ -66,6 +66,8 @@ public class Main {
                     }
 
                     System.out.println("Сотрудник успешно создан. ID: " + employee.getEmployeeId());
+                    System.out.println("Полное представление: " + employee);
+                    System.out.println("Краткое представление: " + employee.toShortString());
                     break;
 
                 } catch (JsonParseException exception) {

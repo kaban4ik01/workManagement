@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Employee {
     private long employeeId;
@@ -103,6 +104,56 @@ public class Employee {
     public final void setSalary(BigDecimal salary) {
         validateSalary(salary);
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeId=" + employeeId +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", patronymic=" + (patronymic == null ? "null" : "'" + patronymic + "'") +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", salary=" + salary.toPlainString() +
+                '}';
+    }
+
+    public String toShortString() {
+        String initials = getInitial(firstName);
+        if (patronymic != null && !patronymic.isEmpty()) {
+            initials += " " + getInitial(patronymic);
+        }
+        return lastName.strip() + " " + initials + ", телефон: " + phone;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        Employee other = (Employee) object;
+        return employeeId == other.employeeId
+                && Objects.equals(lastName, other.lastName)
+                && Objects.equals(firstName, other.firstName)
+                && Objects.equals(patronymic, other.patronymic)
+                && Objects.equals(phone, other.phone)
+                && Objects.equals(email, other.email)
+                && salary.compareTo(other.salary) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeId, lastName, firstName, patronymic,
+                phone, email, salary.stripTrailingZeros());
+    }
+
+    private static String getInitial(String name) {
+        String stripped = name.strip();
+        return stripped.substring(0, stripped.offsetByCodePoints(0, 1)) + ".";
     }
 
     public static void validateEmployeeId(long employeeId) {
