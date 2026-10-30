@@ -25,14 +25,11 @@ public class EmployeeShort {
     }
 
     public final void setPhone(String phone) {
-        Employee.validatePhone(phone);
-        this.phone = phone;
+        this.phone = EmployeeValidation.normalizePhone(phone);
     }
 
     public static void validateShortName(String shortName) {
-        if (shortName == null || shortName.isBlank()) {
-            throw new IllegalArgumentException("Краткое ФИО не должно быть пустым.");
-        }
+        EmployeeValidation.validateRequiredText(shortName, "Краткое ФИО не должно быть пустым.");
     }
 
     @Override

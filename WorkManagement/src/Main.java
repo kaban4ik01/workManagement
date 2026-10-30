@@ -1,5 +1,6 @@
 import model.Employee;
 import model.EmployeeShort;
+import mapper.EmployeeMapper;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -38,14 +39,15 @@ public class Main {
                             System.out.print("Отчество (можно оставить пустым): ");
                             String patronymic = scanner.nextLine();
 
-                            System.out.print("Телефон (10–15 цифр, можно с + в начале): ");
+                            System.out.print("Телефон (например, 8 (999) 123-45-67 или +79991234567): ");
                             String phone = scanner.nextLine();
 
                             System.out.print("Email: ");
                             String email = scanner.nextLine();
 
-                            System.out.print("Оклад (например, 50000.00): ");
-                            BigDecimal salary = new BigDecimal(scanner.nextLine());
+                            System.out.print("Оклад (например, 50000.00; можно оставить пустым): ");
+                            String salaryText = scanner.nextLine();
+                            BigDecimal salary = salaryText.isBlank() ? null : new BigDecimal(salaryText);
 
                             employee = new Employee(
                                     employeeId, lastName, firstName, patronymic, phone, email, salary
@@ -53,13 +55,14 @@ public class Main {
                         }
                         case "2" -> {
                             System.out.println("Формат: ID;фамилия;имя;отчество;телефон;email;оклад");
+                            System.out.println("Отчество и оклад можно оставить пустыми, сохранив разделители ;.");
                             System.out.print("Строка данных: ");
                             employee = new Employee(scanner.nextLine());
                         }
                         case "3" -> {
                             System.out.println("Введите JSON одной строкой: employeeId и salary — числа; "
                                     + "lastName, firstName, patronymic, phone, email — строки. "
-                                    + "Отчество можно пропустить или указать null.");
+                                    + "Отчество и оклад можно пропустить или указать null.");
                             JsonObject json = gson.fromJson(scanner.nextLine(), JsonObject.class);
                             employee = new Employee(json);
                         }
@@ -69,14 +72,16 @@ public class Main {
                     System.out.println("Сотрудник успешно создан. ID: " + employee.getEmployeeId());
                     System.out.println("Полное представление: " + employee);
                     System.out.println("Краткое представление: " + employee.toShortString());
+                    System.out.println("Сохранённый телефон через getPhone(): " + employee.getPhone());
 
-                    EmployeeShort shortEmployee = new EmployeeShort("Иванов И. И.", "+79991234567");
-                    System.out.println("Пример отдельного краткого объекта: " + shortEmployee);
+                    EmployeeShort shortEmployee = EmployeeMapper.toShort(employee);
+                    System.out.println("Краткий объект через EmployeeMapper.toShort(): " + shortEmployee);
                     System.out.println("Краткое ФИО через getShortName(): " + shortEmployee.getShortName());
                     System.out.println("Телефон через getPhone(): " + shortEmployee.getPhone());
                     shortEmployee.setShortName("Петров П. П.");
-                    shortEmployee.setPhone("+79991234568");
+                    shortEmployee.setPhone("8 (999) 123-45-68");
                     System.out.println("После setShortName() и setPhone(): " + shortEmployee);
+                    System.out.println("Исходный сотрудник после изменения краткого объекта: " + employee);
                     break;
 
                 } catch (JsonParseException exception) {

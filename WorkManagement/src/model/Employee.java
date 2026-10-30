@@ -1,5 +1,7 @@
 package model;
 
+import mapper.EmployeeMapper;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
@@ -27,6 +29,16 @@ public class Employee {
         setSalary(salary);
     }
 
+    public Employee(long employeeId, String lastName, String firstName,
+                    String patronymic, String phone, String email) {
+        this(employeeId, lastName, firstName, patronymic, phone, email, null);
+    }
+
+    public Employee(long employeeId, String lastName, String firstName,
+                    String phone, String email) {
+        this(employeeId, lastName, firstName, null, phone, email, null);
+    }
+
     public Employee(String data) {
         this(splitData(data));
     }
@@ -40,7 +52,7 @@ public class Employee {
         this(readJsonEmployeeId(json), readJsonText(json, "lastName"),
                 readJsonText(json, "firstName"), readJsonText(json, "patronymic"),
                 readJsonText(json, "phone"), readJsonText(json, "email"),
-                readJsonNumber(json, "salary"));
+                readJsonSalary(json));
     }
 
     public long getEmployeeId() {
@@ -84,8 +96,7 @@ public class Employee {
     }
 
     public final void setPhone(String phone) {
-        validatePhone(phone);
-        this.phone = phone;
+        this.phone = EmployeeValidation.normalizePhone(phone);
     }
 
     public String getEmail() {
@@ -115,16 +126,12 @@ public class Employee {
                 ", patronymic=" + (patronymic == null ? "null" : "'" + patronymic + "'") +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
-                ", salary=" + salary.toPlainString() +
+                ", salary=" + (salary == null ? "null" : salary.toPlainString()) +
                 '}';
     }
 
     public String toShortString() {
-        String initials = getInitial(firstName);
-        if (patronymic != null && !patronymic.isEmpty()) {
-            initials += " " + getInitial(patronymic);
-        }
-        return lastName.strip() + " " + initials + ", телефон: " + phone;
+        return EmployeeMapper.toShort(this).toString();
     }
 
     @Override
@@ -144,11 +151,6 @@ public class Employee {
         return Objects.hash(phone);
     }
 
-    private static String getInitial(String name) {
-        String stripped = name.strip();
-        return stripped.substring(0, stripped.offsetByCodePoints(0, 1)) + ".";
-    }
-
     public static void validateEmployeeId(long employeeId) {
         if (employeeId <= 0) {
             throw new IllegalArgumentException("Идентификатор сотрудника должен быть больше нуля.");
@@ -156,11 +158,11 @@ public class Employee {
     }
 
     public static void validateLastName(String lastName) {
-        validateRequiredText(lastName, "Фамилия не должна быть пустой.");
+        EmployeeValidation.validateRequiredText(lastName, "Фамилия не должна быть пустой.");
     }
 
     public static void validateFirstName(String firstName) {
-        validateRequiredText(firstName, "Имя не должно быть пустым.");
+        EmployeeValidation.validateRequiredText(firstName, "Имя не должно быть пустым.");
     }
 
     public static void validatePatronymic(String patronymic) {
@@ -170,10 +172,7 @@ public class Employee {
     }
 
     public static void validatePhone(String phone) {
-        if (phone == null || !phone.matches("\\+?[0-9]{10,15}")) {
-            throw new IllegalArgumentException(
-                    "Телефон должен содержать от 10 до 15 цифр с необязательным + в начале.");
-        }
+        EmployeeValidation.validatePhone(phone);
     }
 
     public static void validateEmail(String email) {
@@ -183,17 +182,14 @@ public class Employee {
     }
 
     public static void validateSalary(BigDecimal salary) {
-        if (salary == null || salary.signum() <= 0) {
+        if (salary == null) {
+            return;
+        }
+        if (salary.signum() <= 0) {
             throw new IllegalArgumentException("Оклад должен быть больше нуля.");
         }
         if (salary.stripTrailingZeros().scale() > 2) {
             throw new IllegalArgumentException("Оклад должен задаваться с точностью до копеек.");
-        }
-    }
-
-    private static void validateRequiredText(String value, String errorMessage) {
-        if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException(errorMessage);
         }
     }
 
@@ -218,6 +214,9 @@ public class Employee {
     }
 
     private static BigDecimal parseSalary(String value) {
+        if (value.isBlank()) {
+            return null;
+        }
         try {
             return new BigDecimal(value);
         } catch (NumberFormatException exception) {
@@ -253,6 +252,14 @@ public class Employee {
         } catch (NumberFormatException exception) {
             throw new IllegalArgumentException("Поле JSON " + field + " содержит некорректное число.", exception);
         }
+    }
+
+    private static BigDecimal readJsonSalary(JsonObject json) {
+        JsonElement salary = readJsonValue(json, "salary");
+        if (salary == null || salary.isJsonNull()) {
+            return null;
+        }
+        return readJsonNumber(json, "salary");
     }
 
     private static long readJsonEmployeeId(JsonObject json) {
