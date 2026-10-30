@@ -1,4 +1,5 @@
 import model.Employee;
+import model.EmployeeShort;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -68,6 +69,14 @@ public class Main {
                     System.out.println("Сотрудник успешно создан. ID: " + employee.getEmployeeId());
                     System.out.println("Полное представление: " + employee);
                     System.out.println("Краткое представление: " + employee.toShortString());
+
+                    EmployeeShort shortEmployee = new EmployeeShort("Иванов И. И.", "+79991234567");
+                    System.out.println("Пример отдельного краткого объекта: " + shortEmployee);
+                    System.out.println("Краткое ФИО через getShortName(): " + shortEmployee.getShortName());
+                    System.out.println("Телефон через getPhone(): " + shortEmployee.getPhone());
+                    shortEmployee.setShortName("Петров П. П.");
+                    shortEmployee.setPhone("+79991234568");
+                    System.out.println("После setShortName() и setPhone(): " + shortEmployee);
                     break;
 
                 } catch (JsonParseException exception) {
